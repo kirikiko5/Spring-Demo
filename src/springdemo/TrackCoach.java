@@ -1,6 +1,15 @@
 package springdemo;
 
 public class TrackCoach implements Coach {
+	
+	private FortuneService fortuneService;
+	
+	public TrackCoach() {}
+	
+	//Declaramos el constructor con la dependencia
+	public TrackCoach(FortuneService fortuneService) {
+		this.fortuneService = fortuneService;
+	}
 
 	@Override
 	public String getDailyWorkOut() {
@@ -9,8 +18,7 @@ public class TrackCoach implements Coach {
 
 	@Override
 	public String getDailyFortune() {
-		// TODO Auto-generated method stub
-		return null;
+		return "Me cago en todo " + fortuneService.getFortune();
 	}
 
 }

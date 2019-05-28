@@ -7,12 +7,13 @@ public class HelloSpringApp {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		//load spring confuiguration file
+		//load spring configuration file
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-		//retrive bean from the container
+		//retrieve bean from the container
 		Coach theCoach = context.getBean("myCoach", Coach.class);
 		Coach baseCoach = context.getBean("baseCoach", Coach.class);
 		Coach tennisCoach = context.getBean("tennisCoach", Coach.class);
+		Coach cricketOne = context.getBean("cricketCoach", Coach.class);
 		
 		
 		
@@ -22,6 +23,9 @@ public class HelloSpringApp {
 		System.out.println(tennisCoach.getDailyWorkOut());
 		
 		System.out.println(baseCoach.getDailyFortune());
+		System.out.println(theCoach.getDailyFortune());
+		
+		System.out.println(cricketOne.getDailyFortune());
 		//close the context
 		context.close();
 	}

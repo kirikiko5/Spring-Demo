@@ -10,8 +10,10 @@
     <!-- Define your beans here -->
     <bean id="myCoach"
     	class="springdemo.TrackCoach">
+    	<constructor-arg ref="myFortune"/>
     </bean>
     
+    <!-- Pasamos como parametro la dependencia que hemos creado -->
     <bean id="baseCoach"
     	class="springdemo.BaseballCoach">
     		<constructor-arg ref="myFortune"/>
@@ -21,8 +23,16 @@
     	class="springdemo.TennisCoach">
     </bean>
     
+    <bean id="cricketCoach"
+    	class="springdemo.CricketCoach">
+    	
+    	<property name="fortuneService" ref="myFortune"/>
+    	<property name="emailAddress" value="correobasura@basura.com"/>
+    	<property name="team" value="Barcelona"/>
+   	</bean>
     
-    <!-- -->
+    
+    <!-- Creamos el bean para la inyeccion de dependencias -->
     <bean id="myFortune"
     	class="springdemo.HappyFortuneService">
     </bean>
