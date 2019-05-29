@@ -23,11 +23,15 @@
     </bean>
     
     <bean id="tennisCoach"
-    	class="springdemo.TennisCoach">
+    	class="springdemo.TennisCoach"
+    	init-method="tennisStart"
+    	destroy-method="tennisDestroy">
     </bean>
     
     <bean id="cricketCoach"
-    	class="springdemo.CricketCoach">
+    	class="springdemo.CricketCoach"
+    	init-method="CricketStart"
+    	destroy-method="CricketDestroy">
     	
     	<property name="fortuneService" ref="myFortune"/>
     	<property name="emailAddress" value="${foo.email}"/>

@@ -53,4 +53,12 @@ public class CricketCoach implements Coach {
 		}
 		return aux;
 	}
+	
+	public void CricketStart() {
+		System.out.println("Coach cricket Start");
+	}
+	
+	public void CricketDestroy() {
+		System.out.println("Cricket  Destroy");
+	}
 }

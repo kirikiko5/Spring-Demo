@@ -18,4 +18,12 @@ public class TennisCoach implements Coach {
 		}
 		return aux;
 	}
+	
+	public void tennisStart() {
+		System.out.println("Coach Start");
+	}
+	
+	public void tennisDestroy() {
+		System.out.println("Tennis Destroy");
+	}
 }

@@ -25,5 +25,15 @@ public class TrackCoach implements Coach {
 		}
 		return aux;
 	}
+	
+	//Init method
+	public void doMyStartUpStuff() {
+		System.out.println("Startup method");
+	}
+	
+	//Finish method
+	public void doMyCleanUpStuff() {
+		System.out.println("Finish method");
+	}
 
 }
