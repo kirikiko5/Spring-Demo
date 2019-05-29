@@ -19,8 +19,11 @@ public class BaseballCoach implements Coach {
 
 	@Override
 	public String getDailyFortune() { 
-		
-		//helper class
-		return fortuneService.getFortune();
+		int[] numero = fortuneService.getFortune();;
+		String aux = "";
+		for (int i = 0; i < numero.length; i++) {
+			aux = aux + ", " + Integer.toString(numero[i]);
+		}
+		return aux;
 	}
 }

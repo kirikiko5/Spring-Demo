@@ -17,8 +17,13 @@ public class TrackCoach implements Coach {
 	}
 
 	@Override
-	public String getDailyFortune() {
-		return "Me cago en todo " + fortuneService.getFortune();
+	public String getDailyFortune() { 
+		int[] numero = fortuneService.getFortune();;
+		String aux = "";
+		for (int i = 0; i < numero.length; i++) {
+			aux = aux + ", " + Integer.toString(numero[i]);
+		}
+		return aux;
 	}
 
 }

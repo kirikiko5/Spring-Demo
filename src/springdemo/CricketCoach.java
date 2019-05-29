@@ -44,7 +44,13 @@ public class CricketCoach implements Coach {
 		return "Go to hell";
 	}
 	
-	public String getDailyFortune() {
-		return "What a fucking shitty day";
+	@Override
+	public String getDailyFortune() { 
+		int[] numero = fortuneService.getFortune();;
+		String aux = "";
+		for (int i = 0; i < numero.length; i++) {
+			aux = aux + ", " + Integer.toString(numero[i]);
+		}
+		return aux;
 	}
 }
